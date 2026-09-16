@@ -42,7 +42,7 @@ export const LoadingScreen = ({ onFinished }) => {
             className="relative flex flex-col items-center text-center z-10"
           >
             <div className="relative mb-6">
-              <div className="absolute -inset-2 bg-gradient-to-r from-blue-400 to-indigo-300 rounded-full blur-md opacity-30 animate-pulse" />
+              <div className="absolute  rounded-full blur-md opacity-30 animate-pulse" />
               <div className="w-24 h-24 rounded-2xl bg-white p-3 shadow-2xl flex items-center justify-center">
                 <img src="/logo.png" alt="Vasakal Academy Logo" className="w-full h-full object-contain" />
               </div>

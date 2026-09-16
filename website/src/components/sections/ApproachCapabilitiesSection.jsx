@@ -86,34 +86,41 @@ export const ApproachCapabilitiesSection = () => {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-            {LEARNING_APPROACH.courseDesign.map((step, idx) => (
-              <div
-                key={step.number}
-                onClick={() => setActiveStep(idx)}
-                className={`cursor-pointer rounded-2xl p-5 sm:p-6 transition-all duration-300 ${
-                  activeStep === idx
-                    ? "bg-[#071A3D] text-white dark:bg-white dark:text-[#071A3D] shadow-xl md:scale-105"
-                    : "glass-card hover:bg-blue-50/50 dark:hover:bg-blue-950/40"
-                }`}
-              >
-                <div className="text-2xl font-extrabold font-mono mb-2 opacity-70">
-                  {step.number}
+            {LEARNING_APPROACH.courseDesign.map((step, idx) => {
+              const isActive = activeStep === idx;
+              return (
+                <div
+                  key={step.number}
+                  onClick={() => setActiveStep(idx)}
+                  className={`cursor-pointer rounded-2xl p-5 sm:p-6 transition-all duration-300 ${
+                    isActive
+                      ? "bg-[#071A3D] text-white dark:bg-blue-600 dark:text-white shadow-xl md:scale-105"
+                      : "glass-card hover:bg-blue-50/50 dark:hover:bg-blue-900/30 text-[#071A3D] dark:text-white"
+                  }`}
+                >
+                  <div className={`text-2xl font-extrabold font-mono mb-2 ${
+                    isActive ? "text-blue-300 dark:text-blue-200" : "text-blue-600 dark:text-blue-400"
+                  }`}>
+                    {step.number}
+                  </div>
+                  <h4 className={`text-base sm:text-lg font-bold mb-1 font-heading ${
+                    isActive ? "text-white" : "text-[#071A3D] dark:text-white"
+                  }`}>
+                    {step.title}
+                  </h4>
+                  <p className={`text-xs font-bold mb-3 ${
+                    isActive ? "text-blue-200 dark:text-blue-100" : "text-[#12366B] dark:text-blue-300"
+                  }`}>
+                    {step.question}
+                  </p>
+                  <p className={`text-xs leading-relaxed ${
+                    isActive ? "text-slate-200 dark:text-slate-100" : "text-[#475569] dark:text-slate-300"
+                  }`}>
+                    {step.detail}
+                  </p>
                 </div>
-                <h4 className="text-base sm:text-lg font-bold mb-1 font-heading">
-                  {step.title}
-                </h4>
-                <p className={`text-xs font-bold mb-3 ${
-                  activeStep === idx ? "text-blue-200 dark:text-blue-800" : "text-[#12366B] dark:text-blue-200"
-                }`}>
-                  {step.question}
-                </p>
-                <p className={`text-xs leading-relaxed ${
-                  activeStep === idx ? "text-slate-100 dark:text-slate-800" : "text-[#475569] dark:text-slate-100"
-                }`}>
-                  {step.detail}
-                </p>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
 

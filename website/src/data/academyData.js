@@ -21,10 +21,12 @@ export const ACADEMY_INFO = {
 export const NAV_LINKS = [
   { label: "Home", href: "#hero" },
   { label: "About", href: "#about" },
+  { label: "Super 30", href: "#super30" },
   { label: "Aspirations", href: "#aspirations" },
   { label: "Challenges & Solution", href: "#challenges" },
   { label: "Foundation", href: "#foundation" },
   { label: "Programs", href: "#programs" },
+  { label: "Hostel", href: "#hostel" },
   { label: "Our Approach", href: "#approach" },
   { label: "Faculty", href: "#faculty" },
   { label: "Gallery", href: "#gallery" },
@@ -49,24 +51,6 @@ export const ASPIRATIONS = [
     icon: "Stethoscope",
     gradient: "from-teal-600 to-emerald-700",
     exams: ["NEET UG", "AIIMS", "JIPMER"]
-  },
-  {
-    id: "ca",
-    title: "Chartered Accountant",
-    tag: "ICAI Foundation / Commerce",
-    description: "Analytical rigor, quantitative aptitude, and structured critical thinking required for the prestigious CA curriculum.",
-    icon: "Calculator",
-    gradient: "from-amber-600 to-orange-700",
-    exams: ["CA Foundation", "Logical Reasoning", "Quantitative Aptitude"]
-  },
-  {
-    id: "civil-servant",
-    title: "Civil Servant",
-    tag: "UPSC / Administrative Leadership",
-    description: "Holistic knowledge framework, enquiry-based understanding, and leadership acumen for IAS, IPS, and state civil services.",
-    icon: "Landmark",
-    gradient: "from-rose-600 to-purple-800",
-    exams: ["UPSC Foundation", "State PSCs", "General Studies Mastery"]
   }
 ];
 
@@ -396,7 +380,14 @@ export const FACULTY = [
     role: "Senior Academic Expert - Physics",
     image: "/assets/faculty/shaik_rasheed.png",
     bio: "Expert physicist passionate about experiential mechanics, electrodynamics, and developing intuitive visualization for NEET and IIT-JEE physics."
-  }
+  },
+  {
+    name: "Mr. Laxmi Narayana ",
+    subject: "Biology",
+    role: "Senior Academic Expert - Biology",
+    image: "/assets/faculty/laxmin_narayana.png",
+    bio: "Acclaimed NEET biology pedagogue guiding aspirants with visual synthesis and conceptual clarity."
+  },
 ];
 
 export const GALLERY_ITEMS = [
@@ -409,10 +400,10 @@ export const GALLERY_ITEMS = [
   },
   {
     id: 2,
-    title: "Core Academic Faculty Panel",
+    title: "Study room for Aspirants",
     category: "Academy",
-    image: "/assets/slides/slide_16.png",
-    description: "Our dedicated subject matter leaders in Mathematics, Physics, Chemistry, and Biology."
+    image: "/assets/slides/study_room.jpeg",
+    description: "A peaceful, disciplined, and distraction-free environment designed for NEET and JEE aspirants. Our study room encourages focused learning, regular practice, and effective revision to help students achieve their academic goals."
   },
   {
     id: 3,
@@ -444,10 +435,10 @@ export const GALLERY_ITEMS = [
   },
   {
     id: 7,
-    title: "Curriculum Bandwidth Analysis",
+    title: "Smart teaching room",
     category: "Academy",
-    image: "/assets/slides/slide_5.png",
-    description: "Bridging the gap between secondary school and national entrance levels."
+    image: "/assets/slides/Smart_room.jpeg",
+    description: "A well-equipped smart classroom that supports modern teaching methodologies and interactive learning experiences."
   },
   {
     id: 8,

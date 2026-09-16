@@ -142,7 +142,7 @@ Thank you.`
             <div className="glass-card overflow-hidden h-64 sm:h-80 relative shadow-md border border-[#DCE3EC] dark:border-blue-500/30">
               <iframe
                 title="Vasakal Academy Location - Bodinayakanur"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15715.111812165038!2d77.3400!3d10.0150!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b074092b7c4d877%3A0x2dbbe2d80d24e12e!2sBodinayakanur%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d245.5722805033552!2d77.3487050113243!3d10.00392965653412!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b070d62039a9a4f%3A0xa127908374a2ea5f!2sVasakal%20Academy!5e0!3m2!1sen!2sin!4v1789457726266!5m2!1sen!2sin"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
@@ -178,8 +178,12 @@ Thank you.`
                         Student / Parent Name
                       </label>
                       <input
-                        type="text"
+                        type="name"
                         required
+                        pattern="[A-Za-z]*"
+                        maxLength={20}
+                        minLength={3}
+                        title="Only alphabets allowed"
                         placeholder="e.g. Ramesh Kumar"
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
@@ -213,6 +217,9 @@ Thank you.`
                     </label>
                     <input
                       type="tel"
+                      maxLength={10}
+                      minLength={10}
+                      pattern="[0-9]{10}"
                       required
                       placeholder="10-digit mobile number"
                       value={formData.phone}

@@ -197,13 +197,13 @@ export const HeroSection = () => {
             <div className="grid grid-cols-2 gap-4 w-full max-w-[480px]">
               <div className="relative rounded-2xl overflow-hidden shadow-lg border-2 border-white dark:border-navy-700 group h-36">
                 <img
-                  src="https://images.unsplash.com/photo-1532094349884-543559f3c6be?w=500&q=80&fit=crop"
-                  alt="Science laboratory class at Vasakal Academy"
+                  src="/assets/images/Smart_room.jpeg"
+                  alt="Smart Classroom at Vasakal Academy"
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   loading="eager"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#071A3D]/60 to-transparent" />
-                <span className="absolute bottom-2 left-2 text-[10px] font-bold text-white bg-blue-600/80 px-2 py-0.5 rounded-full">Science Lab</span>
+                <span className="absolute bottom-2 left-2 text-[10px] font-bold text-white bg-blue-600/80 px-2 py-0.5 rounded-full">Smart Classroom</span>
               </div>
               <div className="relative rounded-2xl overflow-hidden shadow-lg border-2 border-white dark:border-navy-700 group h-36">
                 <img
@@ -228,8 +228,8 @@ export const HeroSection = () => {
                   <Award className="w-5 h-5 text-white" />
                 </div>
                 <div>
-                  <p className="text-[10px] font-bold text-[#071A3D] dark:text-white">7-Year</p>
-                  <p className="text-[10px] text-[#475569] dark:text-slate-200">Foundation</p>
+                  <p className="text-[10px] font-bold text-[#071A3D] dark:text-white">100+</p>
+                  <p className="text-[10px] text-[#475569] dark:text-slate-200">Students</p>
                 </div>
               </div>
             </motion.div>

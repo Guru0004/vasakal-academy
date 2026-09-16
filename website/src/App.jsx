@@ -4,10 +4,12 @@ import { LoadingScreen } from "./components/LoadingScreen";
 import { Navbar } from "./components/Navbar";
 import { HeroSection } from "./components/sections/HeroSection";
 import { MissionSection } from "./components/sections/MissionSection";
+import { Super30Section } from "./components/sections/Super30Section";
 import { AspirationsSection } from "./components/sections/AspirationsSection";
 import { ChallengesVsSolutionSection } from "./components/sections/ChallengesVsSolutionSection";
 import { FoundationSection } from "./components/sections/FoundationSection";
 import { ProgramsSection } from "./components/sections/ProgramsSection";
+import { HostelSection } from "./components/sections/HostelSection";
 import { ApproachCapabilitiesSection } from "./components/sections/ApproachCapabilitiesSection";
 import { FacultySection } from "./components/sections/FacultySection";
 import { GallerySection } from "./components/sections/GallerySection";
@@ -30,10 +32,12 @@ function App() {
         <main className="flex-1">
           <HeroSection />
           <MissionSection />
+          <Super30Section />
           <AspirationsSection />
           <ChallengesVsSolutionSection />
           <FoundationSection />
           <ProgramsSection />
+          <HostelSection />
           <ApproachCapabilitiesSection />
           <FacultySection />
           <GallerySection />
