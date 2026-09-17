@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { motion } from "framer-motion";
-import { Clock, Award, CheckCircle2, XCircle, ArrowRight, Users, GraduationCap, School, HeartHandshake } from "lucide-react";
-import { FOUNDATION_DATA, ENROLLMENT_FORM_URL } from "../../data/academyData";
+
+import { CheckCircle2, XCircle } from "lucide-react";
+import { FOUNDATION_DATA } from "../../data/academyData";
 
 export const FoundationSection = () => {
   const [activeStakeholder, setActiveStakeholder] = useState(0);

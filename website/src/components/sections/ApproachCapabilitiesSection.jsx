@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { Lightbulb, Search, Puzzle, FlaskConical, HeartHandshake, CalendarSync, FileSpreadsheet, Users, BarChart3, Headphones, CheckCircle2, ArrowRight } from "lucide-react";
+import { Lightbulb, Search, Puzzle, FlaskConical, HeartHandshake, CalendarSync, FileSpreadsheet, Users, BarChart3, Headphones, CheckCircle2 } from "lucide-react";
 import { LEARNING_APPROACH } from "../../data/academyData";
 
 const pillarIcons = {

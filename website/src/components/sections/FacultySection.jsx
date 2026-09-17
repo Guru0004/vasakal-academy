@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { GraduationCap, Award, BookOpen, ExternalLink } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 import { FACULTY, ENROLLMENT_FORM_URL } from "../../data/academyData";
 
 const subjectColorMap = {

@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Cpu, Stethoscope, Calculator, Landmark, ArrowUpRight, Sparkles } from "lucide-react";
+import { Cpu, Stethoscope, Calculator, Landmark, ArrowUpRight } from "lucide-react";
 import { ASPIRATIONS, ENROLLMENT_FORM_URL } from "../../data/academyData";
 
 const iconMap = {

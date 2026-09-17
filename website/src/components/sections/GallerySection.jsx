@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Maximize2, X, ChevronLeft, ChevronRight, Eye, Filter } from "lucide-react";
+import { Maximize2, X, ChevronLeft, ChevronRight, Eye } from "lucide-react";
 import { GALLERY_ITEMS } from "../../data/academyData";
 
 const categories = ["All", "Academy", "Classes", "Events", "Students", "Activities"];

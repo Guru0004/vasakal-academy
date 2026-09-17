@@ -1,5 +1,5 @@
 import React from "react";
-import { MapPin, Phone, Mail, ExternalLink, ArrowUpRight, GraduationCap } from "lucide-react";
+import { MapPin, Phone, Mail, ExternalLink, GraduationCap } from "lucide-react";
 import { ACADEMY_INFO, NAV_LINKS, ENROLLMENT_FORM_URL } from "../data/academyData";
 
 export const Footer = () => {

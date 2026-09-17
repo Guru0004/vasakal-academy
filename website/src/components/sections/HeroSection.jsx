@@ -1,8 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, ExternalLink, Sparkles, CheckCircle2, Award, BookOpen, GraduationCap, Star } from "lucide-react";
+import { ArrowRight, ExternalLink, CheckCircle2, Award, BookOpen, GraduationCap, Star } from "lucide-react";
 import confetti from "canvas-confetti";
-import { ACADEMY_INFO, ENROLLMENT_FORM_URL, STATS } from "../../data/academyData";
+import { ENROLLMENT_FORM_URL, STATS } from "../../data/academyData";
 
 export const HeroSection = () => {
   const triggerConfetti = () => {

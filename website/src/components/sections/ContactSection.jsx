@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { motion } from "framer-motion";
-import { MapPin, Phone, Mail, Clock, ExternalLink, Send, CheckCircle2 } from "lucide-react";
+
+import { MapPin, Phone, Mail, ExternalLink, Send, CheckCircle2 } from "lucide-react";
 import { ACADEMY_INFO, ENROLLMENT_FORM_URL } from "../../data/academyData";
 
 export const ContactSection = () => {

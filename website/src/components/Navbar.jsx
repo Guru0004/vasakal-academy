@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Sun, Moon, Menu, X, ArrowRight, ExternalLink } from "lucide-react";
+import { Sun, Moon, Menu, X, ExternalLink } from "lucide-react";
 import { useTheme } from "../context/ThemeContext";
 import { NAV_LINKS, ENROLLMENT_FORM_URL } from "../data/academyData";
 
 export const Navbar = () => {
-  const { theme, toggleTheme, isDark } = useTheme();
+  const { toggleTheme, isDark } = useTheme();
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("hero");
