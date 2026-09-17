@@ -11,6 +11,13 @@ const facilities = [
   { icon: Home, label: "Comfortable Accommodation" }
 ];
 
+const hostelImages = [
+  { src: "/images/hostel/boys_room.jpg", alt: "Boys Hostel Room" },
+  { src: "/images/hostel/girls_room.jpg", alt: "Girls Hostel Room" },
+  { src: "/images/hostel/study_room.jpg", alt: "Quiet Study Room" },
+  { src: "/images/hostel/cafeteria.jpg", alt: "Hostel Cafeteria" },
+];
+
 export const HostelSection = () => {
   return (
     <section id="hostel" className="py-20 bg-gray-50 dark:bg-[#041029] relative border-t border-gray-100 dark:border-navy-800">
@@ -88,6 +95,24 @@ export const HostelSection = () => {
             
             <div className="h-1 w-20 bg-pink-500/50 rounded-full" />
           </motion.div>
+        </div>
+
+        {/* Image Gallery Marquee */}
+        <div className="mb-16 relative overflow-hidden flex flex-col items-center">
+          <h3 className="text-2xl font-bold text-center text-[#071A3D] dark:text-white mb-8">Take a Look Inside</h3>
+          <div className="w-full relative overflow-hidden" style={{ maskImage: 'linear-gradient(to right, transparent, black 10%, black 90%, transparent)', WebkitMaskImage: 'linear-gradient(to right, transparent, black 10%, black 90%, transparent)' }}>
+            <motion.div 
+              className="flex gap-6 w-max"
+              animate={{ x: ["0%", "-50%"] }}
+              transition={{ repeat: Infinity, ease: "linear", duration: 25 }}
+            >
+              {[...hostelImages, ...hostelImages].map((img, idx) => (
+                <div key={idx} className="w-[300px] sm:w-[400px] h-[250px] sm:h-[300px] flex-shrink-0 rounded-3xl overflow-hidden shadow-lg border border-gray-100 dark:border-navy-700 bg-gray-200 dark:bg-gray-800">
+                  <img src={img.src} alt={img.alt} className="w-full h-full object-cover hover:scale-110 transition-transform duration-500" />
+                </div>
+              ))}
+            </motion.div>
+          </div>
         </div>
 
         {/* Common Facilities */}

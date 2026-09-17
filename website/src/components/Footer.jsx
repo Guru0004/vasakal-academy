@@ -121,7 +121,10 @@ export const Footer = () => {
 
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-navy-800/80 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-300">
-          <p>© 2026 Vasakal Academy. All Rights Reserved.</p>
+          <div className="grid grid-cols-1 gap-4">
+            <p>© 2026 Vasakal Academy. All Rights Reserved.</p>
+            <a href="https://guruveeraprasath.vercel.app/" target="_blank" rel="noopener noreferrer">Developed by GuruVeeraprasath M</a>
+          </div>
           <p className="text-center sm:text-right text-slate-300">
             Shaping the Real Professionals • Thasildar Office Road, Bodinayakanur - 625513
           </p>

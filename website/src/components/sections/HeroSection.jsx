@@ -197,7 +197,7 @@ export const HeroSection = () => {
             <div className="grid grid-cols-2 gap-4 w-full max-w-[480px]">
               <div className="relative rounded-2xl overflow-hidden shadow-lg border-2 border-white dark:border-navy-700 group h-36">
                 <img
-                  src="/assets/images/Smart_room.jpeg"
+                  src="/images/academy/Smart_room.jpeg"
                   alt="Smart Classroom at Vasakal Academy"
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   loading="eager"
