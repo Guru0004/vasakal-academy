@@ -174,10 +174,11 @@ Thank you.`
                 <form onSubmit={handleSubmit} className="space-y-3">
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     <div>
-                      <label className="block text-[11px] font-bold uppercase text-slate-700 dark:text-slate-200 mb-1">
+                      <label htmlFor="Student_Name" className="block text-[11px] font-bold uppercase text-slate-700 dark:text-slate-200 mb-1">
                         Student / Parent Name
                       </label>
                       <input
+                        id="Student_Name"
                         type="name"
                         required
                         pattern="[A-Za-z]*"
@@ -191,10 +192,11 @@ Thank you.`
                       />
                     </div>
                     <div>
-                      <label className="block text-[11px] font-bold uppercase text-slate-700 dark:text-slate-200 mb-1">
+                      <label htmlFor="Student_Grade" className="block text-[11px] font-bold uppercase text-slate-700 dark:text-slate-200 mb-1">
                         Student Grade
                       </label>
                       <select
+                        id="Student_Grade"
                         value={formData.studentClass}
                         onChange={(e) => setFormData({ ...formData, studentClass: e.target.value })}
                         className="w-full px-3 py-2 rounded-xl text-xs bg-white dark:bg-[#071A3D] border border-[#DCE3EC] dark:border-blue-500/40 text-[#071A3D] dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -212,10 +214,11 @@ Thank you.`
                   </div>
 
                   <div>
-                    <label className="block text-[11px] font-bold uppercase text-slate-700 dark:text-slate-200 mb-1">
+                    <label htmlFor="Contact_Phone" className="block text-[11px] font-bold uppercase text-slate-700 dark:text-slate-200 mb-1">
                       Contact Phone
                     </label>
                     <input
+                      id="Contact_Phone"
                       type="tel"
                       maxLength={10}
                       minLength={10}
@@ -229,10 +232,11 @@ Thank you.`
                   </div>
 
                   <div>
-                    <label className="block text-[11px] font-bold uppercase text-slate-700 dark:text-slate-200 mb-1">
+                    <label htmlFor="Message" className="block text-[11px] font-bold uppercase text-slate-700 dark:text-slate-200 mb-1">
                       Message / Question
                     </label>
                     <textarea
+                      id="Message"
                       rows={2}
                       placeholder="Tell us about the student's background and goals..."
                       value={formData.query}
