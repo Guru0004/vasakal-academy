@@ -31,7 +31,7 @@ export const ScrollToTop = () => {
           whileTap={{ scale: 0.9 }}
           onClick={scrollToTop}
           aria-label="Scroll back to top"
-          className="fixed bottom-20 sm:bottom-8 right-6 z-30 w-11 h-11 rounded-2xl bg-[#071A3D] text-white dark:bg-white dark:text-[#071A3D] shadow-xl flex items-center justify-center border border-white/20 transition-colors duration-200"
+          className="fixed bottom-36 sm:bottom-26 right-6 sm:right-8 z-30 w-11 h-11 rounded-2xl bg-[#071A3D] text-white dark:bg-white dark:text-[#071A3D] shadow-xl flex items-center justify-center border border-white/20 transition-colors duration-200 hover:scale-105 active:scale-95"
         >
           <ArrowUp className="w-5 h-5" />
         </motion.button>

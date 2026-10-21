@@ -64,7 +64,7 @@ export const ApproachCapabilitiesSection = () => {
                   </p>
                 </div>
                 <div className="mt-4 pt-3 border-t border-gray-100 dark:border-navy-700/60 text-[11px] font-bold text-blue-600 dark:text-blue-300">
-                  Pillar 0{i + 1}
+                  Spell 0{i + 1}
                 </div>
               </motion.div>
             );

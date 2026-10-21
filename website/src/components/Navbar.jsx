@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Sun, Moon, Menu, X, ExternalLink } from "lucide-react";
+import { Sun, Moon, Menu, X, ExternalLink, Bell } from "lucide-react";
 import { useTheme } from "../context/ThemeContext";
+import { useNotifications } from "../context/NotificationContext";
 import { NAV_LINKS, ENROLLMENT_FORM_URL } from "../data/academyData";
 
 export const Navbar = () => {
   const { toggleTheme, isDark } = useTheme();
+  const { unreadCount, toggleCenter, openCenter } = useNotifications();
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("hero");
@@ -95,6 +97,22 @@ export const Navbar = () => {
         <div className="flex items-center gap-2 sm:gap-3">
           {/* Desktop/Tablet Action Buttons */}
           <div className="hidden sm:flex items-center gap-2 sm:gap-3">
+            {/* Notification Bell Button */}
+            <button
+              onClick={toggleCenter}
+              data-notification-trigger="true"
+              aria-label="View recent notifications"
+              className="relative w-9 h-9 sm:w-10 sm:h-10 rounded-xl flex items-center justify-center border border-[#DCE3EC] dark:border-blue-500/30 bg-white/80 dark:bg-[#0B2552] text-[#071A3D] dark:text-blue-200 hover:text-blue-600 dark:hover:text-white hover:scale-105 transition-all shadow-xs cursor-pointer"
+            >
+              <Bell className="w-4 h-4 sm:w-4.5 sm:h-4.5" />
+              {unreadCount > 0 && (
+                <span className="absolute -top-1 -right-1 flex h-4 min-w-4 px-1 items-center justify-center rounded-full bg-gradient-to-r from-red-500 to-rose-600 text-[10px] font-black text-white shadow-md ring-2 ring-white dark:ring-[#071A3D] animate-pulse">
+                  {unreadCount}
+                </span>
+              )}
+            </button>
+
+            {/* Theme Toggle */}
             <button
               onClick={toggleTheme}
               aria-label="Toggle light and dark theme"
@@ -103,6 +121,7 @@ export const Navbar = () => {
               {isDark ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
             </button>
 
+            {/* Enroll CTA */}
             <a
               href={ENROLLMENT_FORM_URL}
               target="_blank"
@@ -115,19 +134,47 @@ export const Navbar = () => {
           </div>
 
           {/* Mobile Specific Controls */}
-          <div className="flex items-center gap-2 xl:hidden">
+          <div className="flex items-center gap-1.5 sm:hidden">
+            {/* Mobile Notification Bell */}
+            <button
+              onClick={toggleCenter}
+              data-notification-trigger="true"
+              aria-label="View notifications"
+              className="relative w-9 h-9 rounded-lg flex items-center justify-center border border-[#DCE3EC] dark:border-blue-500/30 bg-white/80 dark:bg-[#0B2552] text-[#071A3D] dark:text-blue-200 hover:text-blue-600 dark:hover:text-white cursor-pointer active:scale-95 transition-transform"
+            >
+              <Bell className="w-4 h-4" />
+              {unreadCount > 0 && (
+                <span className="absolute -top-1 -right-1 flex h-4 min-w-4 px-1 items-center justify-center rounded-full bg-gradient-to-r from-red-500 to-rose-600 text-[9px] font-black text-white shadow-xs ring-2 ring-white dark:ring-[#071A3D] animate-pulse">
+                  {unreadCount}
+                </span>
+              )}
+            </button>
+
+            {/* Mobile Theme Toggle */}
             <button
               onClick={toggleTheme}
               aria-label="Toggle theme"
-              className="sm:hidden w-9 h-9 rounded-lg flex items-center justify-center border border-[#DCE3EC] dark:border-blue-500/30 bg-white/80 dark:bg-[#0B2552] text-[#071A3D] dark:text-yellow-300 cursor-pointer"
+              className="w-9 h-9 rounded-lg flex items-center justify-center border border-[#DCE3EC] dark:border-blue-500/30 bg-white/80 dark:bg-[#0B2552] text-[#071A3D] dark:text-yellow-300 cursor-pointer active:scale-95 transition-transform"
             >
               {isDark ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
             </button>
 
+            {/* Mobile Menu Toggle */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               aria-label="Open menu"
-              className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg flex items-center justify-center text-[#071A3D] dark:text-white hover:bg-black/5 dark:hover:bg-white/10 cursor-pointer"
+              className="w-9 h-9 rounded-lg flex items-center justify-center text-[#071A3D] dark:text-white hover:bg-black/5 dark:hover:bg-white/10 cursor-pointer active:scale-95 transition-transform"
+            >
+              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
+          </div>
+
+          {/* Tablet (sm to xl) Menu Toggle */}
+          <div className="hidden sm:flex xl:hidden items-center">
+            <button
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              aria-label="Open menu"
+              className="w-10 h-10 rounded-lg flex items-center justify-center text-[#071A3D] dark:text-white hover:bg-black/5 dark:hover:bg-white/10 cursor-pointer"
             >
               {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
@@ -146,6 +193,27 @@ export const Navbar = () => {
             className="xl:hidden border-b border-gray-200 dark:border-blue-500/30 bg-white/95 dark:bg-[#071A3D]/95 backdrop-blur-xl px-4 pt-3 pb-6 shadow-2xl"
           >
             <div className="flex flex-col gap-1.5 max-h-[70vh] overflow-y-auto pr-1">
+              {/* Quick Notification Shortcut inside Drawer */}
+              <button
+                onClick={() => {
+                  setMobileMenuOpen(false);
+                  openCenter();
+                }}
+                className="w-full flex items-center justify-between px-4 py-2.5 mb-2 rounded-xl text-sm font-semibold bg-blue-50/80 dark:bg-blue-900/30 text-blue-700 dark:text-blue-200 border border-blue-200/60 dark:border-blue-700/50 cursor-pointer active:scale-98 transition-transform"
+              >
+                <div className="flex items-center gap-2.5">
+                  <Bell className="w-4 h-4 text-blue-600 dark:text-blue-400" />
+                  <span>Recent Notifications</span>
+                </div>
+                {unreadCount > 0 ? (
+                  <span className="px-2 py-0.5 rounded-full text-xs font-bold bg-blue-600 text-white shadow-xs">
+                    {unreadCount} new
+                  </span>
+                ) : (
+                  <span className="text-xs text-gray-500 dark:text-slate-400">View</span>
+                )}
+              </button>
+
               {NAV_LINKS.map((link) => (
                 <a
                   key={link.label}

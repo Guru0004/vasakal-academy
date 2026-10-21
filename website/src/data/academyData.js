@@ -11,7 +11,7 @@ export const ACADEMY_INFO = {
   philosophy: "Learning should combine strong fundamentals, application, practice, assessment and continuous improvement.",
   motto: "Empowering minds. Building futures. Creating leaders of tomorrow.",
   contacts: {
-    phones: ["9842863113", "9944789783"],
+    phones: ["9842863113", "+914546462773", "9944789783"],
     email: "vasakalacademy@gmail.com",
     address: "Thasildar Office Road, Bodinayakanur - 625513",
     mapQuery: "Thasildar Office Road, Bodinayakanur, Tamil Nadu 625513"
@@ -21,14 +21,14 @@ export const ACADEMY_INFO = {
 export const NAV_LINKS = [
   { label: "Home", href: "#hero" },
   { label: "About", href: "#about" },
+  { label: "Faculty", href: "#faculty" },
+  { label: "Programs", href: "#programs" },
   { label: "Super 30", href: "#super30" },
   { label: "Aspirations", href: "#aspirations" },
   { label: "Challenges & Solution", href: "#challenges" },
   { label: "Foundation", href: "#foundation" },
-  { label: "Programs", href: "#programs" },
-  { label: "Hostel", href: "#hostel" },
   { label: "Our Approach", href: "#approach" },
-  { label: "Faculty", href: "#faculty" },
+  { label: "Hostel", href: "#hostel" },
   { label: "Gallery", href: "#gallery" },
   { label: "Contact", href: "#contact" }
 ];
@@ -478,8 +478,8 @@ export const GALLERY_ITEMS = [
 ];
 
 export const STATS = [
-  { value: "7 Years", label: "Structured Tenure", sub: "Class 6th to 12th progression" },
-  { value: "100%", label: "Personalized Focus", sub: "Individualized analysis & support" },
-  { value: "4 Pillars", label: "Integrated Learning", sub: "Creative, Enquiry, Solving & Doing" },
-  { value: "5 Experts", label: "Core Academic Panel", sub: "Math, Physics, Chemistry & Bio" }
+  { value: "7 Years", label: "Structured Tenure", sub: "Class 6th to 12th progression", link: "#foundation" },
+  { value: "100%", label: "Personalized Focus", sub: "Individualized analysis & support", link: "#approach" },
+  { value: "6 Pillars", label: "Integrated Learning", sub: "Creative, Enquiry, Solving & Doing", link: "#faculty" },
+  { value: "5 Experts", label: "Core Academic Panel", sub: "Math, Physics, Chemistry & Bio", link: "#faculty" }
 ];
