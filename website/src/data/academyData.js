@@ -395,7 +395,7 @@ export const GALLERY_ITEMS = [
     id: 1,
     title: "Seminar for Life Goal - Shaping the Real Professionals",
     category: "Events",
-    image: "/assets/slides/slide_1.png",
+    image: "/assets/slides/motivational.jpeg",
     description: "Official Vasakal Academy life-goal seminar introducing career pathways for students."
   },
   {
@@ -407,10 +407,10 @@ export const GALLERY_ITEMS = [
   },
   {
     id: 3,
-    title: "Curriculum Integration & Experiential Learning",
+    title: "Smart way of interactive classes",
     category: "Classes",
-    image: "/assets/slides/slide_15.png",
-    description: "Subjective and objective frameworks given equal priority in our classroom modules."
+    image: "/assets/slides/interactive classes.jpeg",
+    description: "Our smart classrooms and interactive sessions transform complex lessons into clear, engaging learning experiences."
   },
   {
     id: 4,
@@ -456,20 +456,13 @@ export const GALLERY_ITEMS = [
   },
   {
     id: 8,
-    title: "Student Comparison Matrix",
-    category: "Events",
-    image: "/assets/slides/slide_8.png",
-    description: "Demonstrating the tangible advantages of early academic foundation training."
-  },
-  {
-    id: 10,
-    title: "Comprehensive Competitive Solutions",
+    title:"krishna Jayanthi",
     category: "Activities",
-    image: "/assets/slides/slide_13.png",
-    description: "Integrated syllabus aligned with NEET, IIT JEE Mains/Advanced, and Olympiad standards."
+    image: "/assets/slides/krishna_jayanthi.jpeg",
+    description: "Celebration of Krishna Jayanthi."
   },
   {
-    id: 11,
+    id: 9,
     title: "Bodinayakanur Offline Campus Center",
     category: "Academy",
     image: "/assets/slides/Academy entrance.jpeg",

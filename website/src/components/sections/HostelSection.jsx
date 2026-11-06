@@ -13,7 +13,7 @@ const facilities = [
 
 const hostelImages = [
   { src: "/images/hostel/boys_room.jpg", alt: "Boys Hostel Room" },
-  { src: "/images/hostel/girls_room.jpg", alt: "Girls Hostel Room" },
+  { src: "/images/hostel/hostel_food.jpeg", alt: "Hostel Food" },
   { src: "/images/hostel/study_room.jpg", alt: "Quiet Study Room" },
   { src: "/images/hostel/hostel_front_view.jpeg", alt: "Hostel Front View" },
 ];

@@ -496,7 +496,7 @@ const DiwaliCelebrationContent = () => {
               {/* Festive Badge */}
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/20 border border-amber-400/40 text-amber-300 text-xs font-semibold tracking-wider uppercase mb-4 shadow-sm">
                 <Sparkles className="w-3.5 h-3.5 text-amber-300 animate-pulse" />
-                <span>शुभ दीपावली • FESTIVAL OF LIGHTS</span>
+                <span>FESTIVAL OF LIGHTS</span>
                 <Sparkles className="w-3.5 h-3.5 text-amber-300 animate-pulse" />
               </div>
 
