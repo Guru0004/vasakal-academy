@@ -390,12 +390,16 @@ export const FACULTY = [
   },
 ];
 
+// Gallery Items supporting single 'image' or multi-photo albums with 'images: [...]' (ideal for Events & Activities)
 export const GALLERY_ITEMS = [
   {
     id: 1,
     title: "Seminar for Life Goal - Shaping the Real Professionals",
     category: "Events",
     image: "/assets/slides/motivational.jpeg",
+    images: [
+      "/assets/slides/motivational.jpeg"
+    ],
     description: "Official Vasakal Academy life-goal seminar introducing career pathways for students."
   },
   {
@@ -417,13 +421,16 @@ export const GALLERY_ITEMS = [
     title: "Munnar Trip for Refreshment",
     category: "Activities",
     image: "/assets/slides/munnar_trip.jpeg",
-    description:"A journey of refreshment in cool climate of Munnar."
+    images: [
+      "/assets/slides/munnar_trip.jpeg"
+    ],
+    description: "A journey of refreshment in cool climate of Munnar."
   },
   {
     id: 5,
     title: "Foundation Spiral Design Architecture",
     category: "Classes",
-    image: "/assets/slides/slide_12.png",
+    image: "/assets/slides/Foundation.jpeg",
     description: "7th revision, 8th core mastery, and 9th bridge basics."
   },
   // {
@@ -456,9 +463,13 @@ export const GALLERY_ITEMS = [
   },
   {
     id: 8,
-    title:"krishna Jayanthi",
+    title: "krishna Jayanthi",
     category: "Activities",
     image: "/assets/slides/krishna_jayanthi.jpeg",
+    images: [
+      "/assets/slides/krishna_jayanthi.jpeg",
+      "/assets/slides/krishna_jayanthi2.jpeg"
+    ],
     description: "Celebration of Krishna Jayanthi."
   },
   {
@@ -467,6 +478,17 @@ export const GALLERY_ITEMS = [
     category: "Academy",
     image: "/assets/slides/Academy entrance.jpeg",
     description: "Thasildar Office Road center providing personalized hand-holding and support."
+  },
+  {
+    id: 10,
+    title: "Pre-Diwali Celebrations",
+    category: "Activities",
+    image:[
+      "/assets/slides/Diwali_1.jpeg",
+      "/assets/slides/Diwali_2.jpeg",
+      "/assets/slides/Diwali_3.jpeg"
+    ],
+    description: "Our Pre-Diwali Celebrations filled the campus with joy, cultural vibrancy, and enthusiastic participation from students and faculty."
   }
 ];
 
