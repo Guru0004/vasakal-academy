@@ -484,9 +484,7 @@ export const GALLERY_ITEMS = [
     title: "Pre-Diwali Celebrations",
     category: "Activities",
     image:[
-      "/assets/slides/Diwali_1.jpeg",
-      "/assets/slides/Diwali_2.jpeg",
-      "/assets/slides/Diwali_3.jpeg"
+      "/assets/slides/Diwali_1.jpeg"
     ],
     description: "Our Pre-Diwali Celebrations filled the campus with joy, cultural vibrancy, and enthusiastic participation from students and faculty."
   }
