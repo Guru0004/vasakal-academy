@@ -3,7 +3,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Maximize2, X, ChevronLeft, ChevronRight, Eye } from "lucide-react";
 import { GALLERY_ITEMS } from "../../data/academyData";
 
-const categories = ["All", "Academy", "Classes", "Events", "Students", "Activities"];
+// const categories = ["All", "Academy", "Classes", "Events", "Students", "Activities"];
+const categories = ["All", "Academy", "Classes", "Events", "Activities"];
 
 export const GallerySection = () => {
   const [activeCategory, setActiveCategory] = useState("All");

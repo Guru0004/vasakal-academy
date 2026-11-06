@@ -23,7 +23,7 @@ export const NAV_LINKS = [
   { label: "About", href: "#about" },
   { label: "Faculty", href: "#faculty" },
   { label: "Programs", href: "#programs" },
-  { label: "Super 30", href: "#super30" },
+  { label: "V 30", href: "#v30" },
   { label: "Aspirations", href: "#aspirations" },
   { label: "Challenges & Solution", href: "#challenges" },
   { label: "Foundation", href: "#foundation" },
@@ -347,20 +347,6 @@ export const LEARNING_APPROACH = {
 
 export const FACULTY = [
   {
-    name: "Mr. RVVS Narayana",
-    subject: "Mathematics",
-    role: "Senior Academic Expert - Mathematics",
-    image: "/assets/faculty/narayana.png",
-    bio: "Renowned expert in breaking down abstract mathematical concepts, analytical problem solving, and Olympiad calculus into intuitive logical steps."
-  },
-  {
-    name: "Mr. A. Anil Kumar",
-    subject: "Chemistry",
-    role: "Senior Academic Expert - Chemistry",
-    image: "/assets/faculty/anil_kumar.png",
-    bio: "Specialist in Physical and Organic Chemistry with proven techniques for mastering complex reaction mechanisms and numerical chemistry."
-  },
-  {
     name: "Mrs. M. Bhuvana Latha",
     subject: "Chemistry",
     role: "Senior Academic Expert - Chemistry",
@@ -368,11 +354,11 @@ export const FACULTY = [
     bio: "Expert mentor focused on Inorganic Chemistry, conceptual clarity, memory retention techniques, and structured competitive practice."
   },
   {
-    name: "Mr. Pagadala Malakondaiah",
-    subject: "Biology",
-    role: "Senior Academic Expert - Biology",
-    image: "/assets/faculty/malakondaiah.png",
-    bio: "Distinguished biology pedagogue guiding aspirants to score maximum marks in NEET Botany and Zoology through visual and diagrammatic synthesis."
+    name: "Mr. RVVS Narayana",
+    subject: "Mathematics",
+    role: "Senior Academic Expert - Mathematics",
+    image: "/assets/faculty/narayana.png",
+    bio: "Renowned expert in breaking down abstract mathematical concepts, analytical problem solving, and Olympiad calculus into intuitive logical steps."
   },
   {
     name: "Mr. Shaik Rasheed",
@@ -382,9 +368,23 @@ export const FACULTY = [
     bio: "Expert physicist passionate about experiential mechanics, electrodynamics, and developing intuitive visualization for NEET and IIT-JEE physics."
   },
   {
+    name: "Mr. A. Anil Kumar",
+    subject: "Chemistry",
+    role: "Senior Academic Expert - Chemistry",
+    image: "/assets/faculty/anil_kumar.png",
+    bio: "Specialist in Physical and Organic Chemistry with proven techniques for mastering complex reaction mechanisms and numerical chemistry."
+  },
+  {
+    name: "Mr. Pagadala Malakondaiah",
+    subject: "Botany",
+    role: "Senior Academic Expert - Botany",
+    image: "/assets/faculty/malakondaiah.png",
+    bio: "Distinguished biology pedagogue guiding aspirants to score maximum marks in NEET Botany and Zoology through visual and diagrammatic synthesis."
+  },
+  {
     name: "Mr. Laxmi Narayana ",
-    subject: "Biology",
-    role: "Senior Academic Expert - Biology",
+    subject: "Zoology",
+    role: "Senior Academic Expert - Zoology",
     image: "/assets/faculty/laxmin_narayana.png",
     bio: "Acclaimed NEET biology pedagogue guiding aspirants with visual synthesis and conceptual clarity."
   },
@@ -414,10 +414,10 @@ export const GALLERY_ITEMS = [
   },
   {
     id: 4,
-    title: "Interactive Course Design Triangle",
+    title: "Munnar Trip for Refreshment",
     category: "Activities",
-    image: "/assets/slides/slide_11.png",
-    description: "Structured alignment of Objectives, Activities, and Assessments."
+    image: "/assets/slides/munnar_trip.jpeg",
+    description:"A journey of refreshment in cool climate of Munnar."
   },
   {
     id: 5,
@@ -426,53 +426,53 @@ export const GALLERY_ITEMS = [
     image: "/assets/slides/slide_12.png",
     description: "7th revision, 8th core mastery, and 9th bridge basics."
   },
+  // {
+  //   id: 6,
+  //   title: "Career Aspirations & Pathways",
+  //   category: "Students",
+  //   image: "/assets/slides/slide_3.png",
+  //   description: "Guiding students toward Engineering, Medicine, CA, and Civil Services."
+  // },
   {
     id: 6,
-    title: "Career Aspirations & Pathways",
-    category: "Students",
-    image: "/assets/slides/slide_3.png",
-    description: "Guiding students toward Engineering, Medicine, CA, and Civil Services."
-  },
-  {
-    id: 7,
-    title: "Smart teaching room",
+    title: "Smart Teaching Room",
     category: "Academy",
     image: "/assets/slides/Smart_room.jpeg",
     description: "A well-equipped smart classroom that supports modern teaching methodologies and interactive learning experiences."
   },
+  // {
+  //   id: 8,
+  //   title: "When Does a Child Require Foundation?",
+  //   category: "Events",
+  //   image: "/assets/slides/slide_7.png",
+  //   description: "Parent and student seminar discussing the benefits of starting early from Class 6th."
+  // },
+  {
+    id: 7,
+    title: "Deep Level of Teaching",
+    category: "Academy",
+    image: "/assets/slides/DeepTeaching.jpeg",
+    description: "Delivering subject expertise through the ‘Ask, Reason, Apply, Link, Predict’ learning cycle."
+  },
   {
     id: 8,
-    title: "When Does a Child Require Foundation?",
-    category: "Events",
-    image: "/assets/slides/slide_7.png",
-    description: "Parent and student seminar discussing the benefits of starting early from Class 6th."
-  },
-  {
-    id: 9,
-    title: "Institutional Focus & Learning Atmosphere",
-    category: "Academy",
-    image: "/assets/slides/slide_6.png",
-    description: "Creating a scientifically designed curriculum and conducive atmosphere for practice."
-  },
-  {
-    id: 10,
     title: "Student Comparison Matrix",
-    category: "Students",
+    category: "Events",
     image: "/assets/slides/slide_8.png",
     description: "Demonstrating the tangible advantages of early academic foundation training."
   },
   {
-    id: 11,
+    id: 10,
     title: "Comprehensive Competitive Solutions",
     category: "Activities",
     image: "/assets/slides/slide_13.png",
     description: "Integrated syllabus aligned with NEET, IIT JEE Mains/Advanced, and Olympiad standards."
   },
   {
-    id: 12,
+    id: 11,
     title: "Bodinayakanur Offline Campus Center",
     category: "Academy",
-    image: "/assets/slides/slide_14.png",
+    image: "/assets/slides/Academy entrance.jpeg",
     description: "Thasildar Office Road center providing personalized hand-holding and support."
   }
 ];

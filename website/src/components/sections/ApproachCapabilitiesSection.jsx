@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { Lightbulb, Search, Puzzle, FlaskConical, HeartHandshake, CalendarSync, FileSpreadsheet, Users, BarChart3, Headphones, CheckCircle2 } from "lucide-react";
+import { Lightbulb, Search, Puzzle, FlaskConical, HeartHandshake, CalendarSync, FileSpreadsheet, Users, BarChart3, Headphones, CheckCircle2, Scale } from "lucide-react";
 import { LEARNING_APPROACH } from "../../data/academyData";
 
 const pillarIcons = {
@@ -34,15 +34,16 @@ export const ApproachCapabilitiesSection = () => {
             Our Learning Approach & Capabilities
           </h2>
           <p className="text-sm sm:text-base text-[#475569] dark:text-slate-100 font-medium">
-            Vasakal Academy synthesizes four progressive pillars to nurture holistic cognitive readiness.
+            Vasakal Academy synthesizes four progressive spell to nurture holistic cognitive readiness.
           </p>
 
-          <div className="inline-block mt-4 px-4 py-2 rounded-xl bg-blue-50 dark:bg-blue-950 border border-blue-200 dark:border-blue-500/30 text-xs sm:text-sm font-bold text-[#12366B] dark:text-blue-100">
-            ⚖️ {LEARNING_APPROACH.corePrinciple}
+          <div className="inline-flex items-center gap-2 mt-4 px-4 py-2 rounded-xl bg-blue-50 dark:bg-blue-950 border border-blue-200 dark:border-blue-500/30 text-xs sm:text-sm font-bold text-[#12366B] dark:text-blue-100">
+            <Scale className="w-4 h-4 text-blue-600 dark:text-blue-300 shrink-0" />
+            <span>{LEARNING_APPROACH.corePrinciple}</span>
           </div>
         </div>
 
-        {/* 4 Pillars Grid */}
+        {/* 4 spell Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6 mb-16 sm:mb-20">
           {LEARNING_APPROACH.pillars.map((pillar, i) => {
             const Icon = pillarIcons[pillar.icon] || Lightbulb;

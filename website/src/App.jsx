@@ -6,7 +6,7 @@ import { LoadingScreen } from "./components/LoadingScreen";
 import { Navbar } from "./components/Navbar";
 import { HeroSection } from "./components/sections/HeroSection";
 import { MissionSection } from "./components/sections/MissionSection";
-import { Super30Section } from "./components/sections/Super30Section";
+import { V30Section } from "./components/sections/Super30Section";
 import { AspirationsSection } from "./components/sections/AspirationsSection";
 import { ChallengesVsSolutionSection } from "./components/sections/ChallengesVsSolutionSection";
 import { FoundationSection } from "./components/sections/FoundationSection";
@@ -22,6 +22,7 @@ import { MobileBottomCTA } from "./components/MobileBottomCTA";
 import { AIBot } from "./components/AIBot";
 import { PopupNotifications } from "./components/PopupNotifications";
 import { NotificationCenter } from "./components/NotificationCenter";
+import { DiwaliCelebration } from "./components/DiwaliCelebration";
 import "./App.css";
 
 function App() {
@@ -41,7 +42,7 @@ function App() {
               <MissionSection />
               <FacultySection />
               <ProgramsSection />
-              <Super30Section />
+              <V30Section />
               <AspirationsSection />
               <ChallengesVsSolutionSection />
               <FoundationSection />
@@ -57,6 +58,7 @@ function App() {
             <PopupNotifications />
             <NotificationCenter />
             <MobileBottomCTA />
+            {!loading && <DiwaliCelebration />}
           </div>
         </NotificationProvider>
       </UserProvider>

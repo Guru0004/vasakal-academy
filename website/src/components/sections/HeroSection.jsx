@@ -7,12 +7,12 @@ import { ENROLLMENT_FORM_URL, STATS } from "../../data/academyData";
 // 3 Elements for the Hero Image Swapping Animation
 const HERO_CARDS = [
   {
-    id: "aspirants",
-    src: "https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=900&q=85&fit=crop",
+    id: "Personalized Teaching",
+    src: "/images/academy/personal_teaching.jpeg",
     alt: "Students learning together at Vasakal Academy",
-    title: "Personalized Learning",
+    title: "Personalized Teaching",
     subtitle: "Expert faculty • Small batches",
-    tag: "Aspirants Focus",
+    tag: "Personalized Teaching",
     badgeColor: "bg-blue-600/90 text-white",
     icon: GraduationCap,
     rating: true
@@ -29,12 +29,12 @@ const HERO_CARDS = [
     rating: false
   },
   {
-    id: "mathematics",
-    src: "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=500&q=80&fit=crop",
-    alt: "Mathematics class at Vasakal Academy",
-    title: "Competitive Mathematics",
-    subtitle: "Analytical problem solving & mock drills",
-    tag: "Mathematics",
+    id: "Mentorship",
+    src: "/images/academy/Mentorship.jpeg",
+    alt: "Mentorship meeting at Vasakal Academy",
+    title: "Mentor meeting",
+    subtitle:"Expert guidance, Exam Strategy & Personalized Attention",
+    tag: "Mentorship",
     badgeColor: "bg-indigo-600/90 text-white",
     icon: Award,
     rating: false
@@ -352,7 +352,7 @@ export const HeroSection = () => {
                   <Award className="w-5 h-5 text-white" />
                 </div>
                 <div>
-                  <p className="text-[10px] font-bold text-[#071A3D] dark:text-white">100+</p>
+                  <p className="text-[10px] font-bold text-[#071A3D] dark:text-white">130+</p>
                   <p className="text-[10px] text-[#475569] dark:text-slate-200">Students</p>
                 </div>
               </div>

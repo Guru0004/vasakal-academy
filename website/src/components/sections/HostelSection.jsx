@@ -1,13 +1,13 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Home, Shield, Utensils, Wifi, BookOpen, Coffee } from "lucide-react";
+import { Home, Shield, Utensils, Wifi, BookOpen, Coffee, ShirtIcon } from "lucide-react";
 
 const facilities = [
   { icon: Shield, label: "24/7 Security & Surveillance" },
   { icon: Utensils, label: "Nutritious & Hygienic Food" },
   { icon: Wifi, label: "High-Speed Internet" },
   { icon: BookOpen, label: "Dedicated Study Rooms" },
-  { icon: Coffee, label: "Recreation Area" },
+  { icon: ShirtIcon, label: "Washing Machine" },
   { icon: Home, label: "Comfortable Accommodation" }
 ];
 
@@ -15,7 +15,7 @@ const hostelImages = [
   { src: "/images/hostel/boys_room.jpg", alt: "Boys Hostel Room" },
   { src: "/images/hostel/girls_room.jpg", alt: "Girls Hostel Room" },
   { src: "/images/hostel/study_room.jpg", alt: "Quiet Study Room" },
-  { src: "/images/hostel/cafeteria.jpg", alt: "Hostel Cafeteria" },
+  { src: "/images/hostel/hostel_front_view.jpeg", alt: "Hostel Front View" },
 ];
 
 export const HostelSection = () => {

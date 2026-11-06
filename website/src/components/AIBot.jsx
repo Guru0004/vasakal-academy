@@ -11,7 +11,43 @@ import {
   RotateCcw,
   ShieldAlert,
   Compass,
-  Clock
+  Clock,
+  Rocket,
+  BookOpen,
+  Home,
+  FileText,
+  Star,
+  GraduationCap,
+  Shield,
+  MapPin,
+  Target,
+  TrendingUp,
+  Handshake,
+  Trophy,
+  User,
+  Users,
+  Utensils,
+  Wifi,
+  Coffee,
+  Globe,
+  BarChart3,
+  Settings,
+  Stethoscope,
+  Building,
+  Building2,
+  Mail,
+  Lightbulb,
+  Search,
+  Layers,
+  FlaskConical,
+  Image as ImageIcon,
+  Monitor,
+  Landmark,
+  Sun,
+  SunMedium,
+  Sunset,
+  Moon,
+  AlertTriangle
 } from "lucide-react";
 import { useUser } from "../context/UserContext";
 import {
@@ -20,6 +56,127 @@ import {
   navigateToSection,
   QUICK_SUGGESTIONS
 } from "../data/aiBotKnowledge";
+
+const EMOJI_ICON_MAP = {
+  "👋": { Icon: Sparkles, color: "text-amber-500" },
+  "🚀": { Icon: Rocket, color: "text-blue-500" },
+  "📚": { Icon: BookOpen, color: "text-indigo-500" },
+  "🏠": { Icon: Home, color: "text-blue-600" },
+  "📝": { Icon: FileText, color: "text-blue-500" },
+  "🌟": { Icon: Star, color: "text-amber-400" },
+  "👨‍🏫": { Icon: GraduationCap, color: "text-blue-600" },
+  "👨": { Icon: GraduationCap, color: "text-blue-600" },
+  "📞": { Icon: Phone, color: "text-emerald-500" },
+  "🛡️": { Icon: Shield, color: "text-blue-600" },
+  "🛡": { Icon: Shield, color: "text-blue-600" },
+  "📍": { Icon: MapPin, color: "text-rose-500" },
+  "🎯": { Icon: Target, color: "text-rose-500" },
+  "📈": { Icon: TrendingUp, color: "text-emerald-500" },
+  "🤝": { Icon: Handshake, color: "text-blue-500" },
+  "🏆": { Icon: Trophy, color: "text-amber-500" },
+  "👉": { Icon: ArrowRight, color: "text-blue-500" },
+  "👦": { Icon: User, color: "text-blue-500" },
+  "👧": { Icon: User, color: "text-pink-500" },
+  "🍲": { Icon: Utensils, color: "text-amber-500" },
+  "📶": { Icon: Wifi, color: "text-emerald-500" },
+  "📖": { Icon: BookOpen, color: "text-indigo-500" },
+  "☕": { Icon: Coffee, color: "text-amber-600" },
+  "🌀": { Icon: Compass, color: "text-cyan-500" },
+  "🌐": { Icon: Globe, color: "text-blue-500" },
+  "📊": { Icon: BarChart3, color: "text-emerald-500" },
+  "⚙️": { Icon: Settings, color: "text-slate-500" },
+  "⚙": { Icon: Settings, color: "text-slate-500" },
+  "🩺": { Icon: Stethoscope, color: "text-teal-600" },
+  "👥": { Icon: Users, color: "text-blue-500" },
+  "📄": { Icon: FileText, color: "text-blue-500" },
+  "🏢": { Icon: Building, color: "text-blue-600" },
+  "🏫": { Icon: Building2, color: "text-blue-600" },
+  "✉️": { Icon: Mail, color: "text-blue-500" },
+  "✉": { Icon: Mail, color: "text-blue-500" },
+  "🕒": { Icon: Clock, color: "text-blue-500" },
+  "💡": { Icon: Lightbulb, color: "text-amber-400" },
+  "🔍": { Icon: Search, color: "text-blue-500" },
+  "🧩": { Icon: Layers, color: "text-indigo-500" },
+  "🔬": { Icon: FlaskConical, color: "text-emerald-500" },
+  "🖼️": { Icon: ImageIcon, color: "text-blue-500" },
+  "🖼": { Icon: ImageIcon, color: "text-blue-500" },
+  "💻": { Icon: Monitor, color: "text-blue-500" },
+  "🏛️": { Icon: Landmark, color: "text-indigo-600" },
+  "🏛": { Icon: Landmark, color: "text-indigo-600" },
+  "🌅": { Icon: Sun, color: "text-amber-500" },
+  "☀️": { Icon: SunMedium, color: "text-amber-400" },
+  "☀": { Icon: SunMedium, color: "text-amber-400" },
+  "🌆": { Icon: Sunset, color: "text-orange-500" },
+  "🌙": { Icon: Moon, color: "text-indigo-400" },
+  "🎓": { Icon: GraduationCap, color: "text-blue-600" },
+  "⚠️": { Icon: AlertTriangle, color: "text-amber-500" },
+  "⚠": { Icon: AlertTriangle, color: "text-amber-500" }
+};
+
+const LUCIDE_NAME_MAP = {
+  Rocket,
+  BookOpen,
+  Home,
+  FileText,
+  Star,
+  GraduationCap,
+  Phone,
+  Shield,
+  MapPin,
+  Target,
+  TrendingUp,
+  Handshake,
+  Trophy,
+  ArrowRight,
+  User,
+  Users,
+  Utensils,
+  Wifi,
+  Coffee,
+  Compass,
+  Globe,
+  BarChart3,
+  Settings,
+  Stethoscope,
+  Building,
+  Building2,
+  Mail,
+  Clock,
+  Lightbulb,
+  Search,
+  Layers,
+  FlaskConical,
+  ImageIcon,
+  Monitor,
+  Landmark,
+  Sun,
+  SunMedium,
+  Sunset,
+  Moon,
+  Sparkles
+};
+
+const EMOJI_REGEX = /(\uD83D\uDC68\u200D\uD83C\uDFEB|[\u{1F300}-\u{1F9FF}\u{2600}-\u{26FF}\u{2700}-\u{27BF}\u{1F600}-\u{1F64F}\u{1F680}-\u{1F6FF}][\u{FE00}-\u{FE0F}]?)/gu;
+
+// Replace emojis inside a text segment with the matching Lucide Icon component
+const renderSegmentWithIcons = (text, keyPrefix) => {
+  if (typeof text !== "string") return text;
+  const parts = text.split(EMOJI_REGEX);
+  if (parts.length === 1) return text;
+
+  return parts.map((part, pIdx) => {
+    const match = EMOJI_ICON_MAP[part] || EMOJI_ICON_MAP[part.trim()];
+    if (match) {
+      const { Icon, color } = match;
+      return (
+        <span key={`${keyPrefix}-icon-${pIdx}`} className="inline-flex items-center align-middle mx-1">
+          <Icon className={`w-3.5 h-3.5 ${color} shrink-0`} />
+        </span>
+      );
+    }
+    return part;
+  });
+};
 
 export const AIBot = () => {
   const { isNewVisitor, getTimeGreeting } = useUser();
@@ -123,7 +280,7 @@ export const AIBot = () => {
     ]);
   };
 
-  // Helper to render text with bold and list highlights
+  // Helper to render text with bold and list highlights, converting emojis to Lucide icons
   const renderFormattedText = (text) => {
     const lines = text.split("\n");
     return (
@@ -133,30 +290,30 @@ export const AIBot = () => {
             return <div key={idx} className="h-1.5" />;
           }
 
-          // Format bold **text**
-          const parts = line.split(/(\*\*.*?\*\*)/g);
+          // Format bold **text** and italic *text*
+          const parts = line.split(/(\*\*.*?\*\*|\*.*?\*)/g);
           const formattedParts = parts.map((part, pIdx) => {
             if (part.startsWith("**") && part.endsWith("**")) {
               return (
                 <strong key={pIdx} className="font-bold text-[#071A3D] dark:text-blue-100">
-                  {part.slice(2, -2)}
+                  {renderSegmentWithIcons(part.slice(2, -2), `b-${idx}-${pIdx}`)}
                 </strong>
               );
             }
             if (part.startsWith("*") && part.endsWith("*")) {
               return (
                 <em key={pIdx} className="italic text-gray-700 dark:text-slate-300">
-                  {part.slice(1, -1)}
+                  {renderSegmentWithIcons(part.slice(1, -1), `i-${idx}-${pIdx}`)}
                 </em>
               );
             }
-            return part;
+            return renderSegmentWithIcons(part, `t-${idx}-${pIdx}`);
           });
 
           if (line.trim().startsWith("- ") || line.trim().startsWith("• ")) {
             return (
               <div key={idx} className="flex items-start gap-1.5 ml-1">
-                <span className="text-blue-500 font-bold">•</span>
+                <span className="text-blue-500 font-bold shrink-0 mt-0.5">•</span>
                 <span className="flex-1">{formattedParts}</span>
               </div>
             );
@@ -200,8 +357,12 @@ export const AIBot = () => {
                 </div>
                 <div className="flex-1">
                   <div className="flex items-center gap-1.5 mb-0.5">
-                    <span className="text-[11px] font-extrabold uppercase tracking-wider text-blue-600 dark:text-blue-300">
-                      {timeInfo.greeting} {timeInfo.emoji}
+                    <span className="text-[11px] font-extrabold uppercase tracking-wider text-blue-600 dark:text-blue-300 flex items-center gap-1">
+                      <span>{timeInfo.greeting}</span>
+                      {timeInfo.icon === "Sun" && <Sun className="w-3.5 h-3.5 text-amber-500 shrink-0" />}
+                      {timeInfo.icon === "SunMedium" && <SunMedium className="w-3.5 h-3.5 text-amber-400 shrink-0" />}
+                      {timeInfo.icon === "Sunset" && <Sunset className="w-3.5 h-3.5 text-orange-500 shrink-0" />}
+                      {timeInfo.icon === "Moon" && <Moon className="w-3.5 h-3.5 text-indigo-400 shrink-0" />}
                     </span>
                     <span className="text-[10px] px-1.5 py-0.5 rounded-full bg-blue-100 dark:bg-blue-900/60 text-blue-700 dark:text-blue-200 font-bold">
                       Vasakal AI
@@ -210,7 +371,7 @@ export const AIBot = () => {
                   <p className="text-xs text-gray-700 dark:text-slate-200 font-medium line-clamp-2">
                     {isNewVisitor
                       ? "Welcome to Vasakal Academy! Ask me anything about our campus & courses."
-                      : "Welcome back! Looking for Super 30, hostel facilities, or admissions?"}
+                      : "Welcome back! Looking for V 30, hostel facilities, or admissions?"}
                   </p>
                 </div>
               </div>
@@ -411,18 +572,46 @@ export const AIBot = () => {
                     {/* Action navigation buttons */}
                     {msg.actions && msg.actions.length > 0 && (
                       <div className="mt-3 pt-2.5 border-t border-gray-100 dark:border-white/10 flex flex-wrap gap-1.5">
-                        {msg.actions.map((act, aIdx) => (
-                          <button
-                            key={aIdx}
-                            onClick={() => handleActionClick(act)}
-                            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-bold bg-blue-50 hover:bg-blue-100 dark:bg-blue-900/40 dark:hover:bg-blue-800/60 text-[#071A3D] dark:text-blue-100 border border-blue-200 dark:border-blue-700/50 transition-all hover:scale-[1.02] active:scale-95 cursor-pointer shadow-2xs"
-                          >
-                            <span>{act.label}</span>
-                            {act.targetId && <ArrowRight className="w-3 h-3 text-blue-600 dark:text-blue-400" />}
-                            {act.externalUrl && <ExternalLink className="w-3 h-3 text-blue-600 dark:text-blue-400" />}
-                            {act.phoneUrl && <Phone className="w-3 h-3 text-blue-600 dark:text-blue-400" />}
-                          </button>
-                        ))}
+                        {msg.actions.map((act, aIdx) => {
+                          let ActionIcon = null;
+                          let cleanLabel = act.label;
+
+                          if (act.icon && LUCIDE_NAME_MAP[act.icon]) {
+                            ActionIcon = LUCIDE_NAME_MAP[act.icon];
+                          } else {
+                            const emojiMatch = act.label.match(EMOJI_REGEX);
+                            if (emojiMatch && act.label.startsWith(emojiMatch[0])) {
+                              const matched = EMOJI_ICON_MAP[emojiMatch[0]];
+                              if (matched) {
+                                ActionIcon = matched.Icon;
+                                cleanLabel = act.label.replace(emojiMatch[0], "").trim();
+                              }
+                            }
+                          }
+
+                          if (!ActionIcon) {
+                            if (act.phoneUrl) ActionIcon = Phone;
+                            else if (act.externalUrl) ActionIcon = ExternalLink;
+                            else if (act.targetId) ActionIcon = ArrowRight;
+                          }
+
+                          return (
+                            <button
+                              key={aIdx}
+                              onClick={() => handleActionClick(act)}
+                              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-bold bg-blue-50 hover:bg-blue-100 dark:bg-blue-900/40 dark:hover:bg-blue-800/60 text-[#071A3D] dark:text-blue-100 border border-blue-200 dark:border-blue-700/50 transition-all hover:scale-[1.02] active:scale-95 cursor-pointer shadow-2xs"
+                            >
+                              {ActionIcon && <ActionIcon className="w-3.5 h-3.5 text-blue-600 dark:text-blue-400 shrink-0" />}
+                              <span>{cleanLabel}</span>
+                              {act.targetId && ActionIcon !== ArrowRight && (
+                                <ArrowRight className="w-3 h-3 text-blue-400/80 shrink-0 ml-0.5" />
+                              )}
+                              {act.externalUrl && ActionIcon !== ExternalLink && (
+                                <ExternalLink className="w-3 h-3 text-blue-400/80 shrink-0 ml-0.5" />
+                              )}
+                            </button>
+                          );
+                        })}
                       </div>
                     )}
                   </div>
@@ -480,7 +669,7 @@ export const AIBot = () => {
                 type="text"
                 value={inputValue}
                 onChange={(e) => setInputValue(e.target.value)}
-                placeholder="Ask about Super 30, hostel, faculty, admissions..."
+                placeholder="Ask about V 30, hostel, faculty, admissions..."
                 className="flex-1 px-4 py-2.5 text-xs sm:text-sm rounded-xl border border-gray-300 dark:border-blue-500/40 bg-gray-50 dark:bg-[#0B2552] text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all"
               />
 

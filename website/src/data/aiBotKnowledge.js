@@ -1,7 +1,7 @@
 // Vasakal Academy AI Knowledge & Navigation Engine
 // Strictly restricted to Vasakal Academy website offerings and guidance.
 
-import { ACADEMY_INFO, ENROLLMENT_FORM_URL, FACULTY, PROGRAMS } from "./academyData";
+import { ACADEMY_INFO, ENROLLMENT_FORM_URL, FACULTY } from "./academyData";
 
 // Navigation helper that smoothly scrolls and highlights the target section
 export const navigateToSection = (sectionId) => {
@@ -32,20 +32,20 @@ export const getPersonalizedGreeting = (timeGreeting, isNewVisitor) => {
     return {
       text: `👋 **${timeGreeting.greeting}!** ${timeGreeting.emoji}\n\nWelcome to **Vasakal Academy**! I am your AI Navigator, dedicated **exclusively** to helping you explore our academy's programs, hostel life, faculty experts, and admissions.\n\n${timeGreeting.description}\n\nSelect a topic below or type your question:`,
       actions: [
-        { label: "🚀 Super 30 (NEET & JEE)", targetId: "super30" },
-        { label: "📚 Foundation (Class 4-10)", targetId: "programs" },
-        { label: "🏠 Boys & Girls Hostel", targetId: "hostel" },
-        { label: "📝 How to Enroll", externalUrl: ENROLLMENT_FORM_URL }
+        { label: "V 30 (NEET & JEE)", icon: "Rocket", targetId: "v30" },
+        { label: "Foundation (Class 4-10)", icon: "BookOpen", targetId: "programs" },
+        { label: "Boys & Girls Hostel", icon: "Home", targetId: "hostel" },
+        { label: "How to Enroll", icon: "FileText", externalUrl: ENROLLMENT_FORM_URL }
       ]
     };
   } else {
     return {
-      text: `🌟 **Welcome back to Vasakal Academy!** ${timeGreeting.greeting}! ${timeGreeting.emoji}\n\nGreat to have you revisit our website. Looking to explore our Super 30 repeaters batch, hostel facilities, faculty, or admissions?\n\nHow may I direct you on the website today?`,
+      text: `🌟 **Welcome back to Vasakal Academy!** ${timeGreeting.greeting}! ${timeGreeting.emoji}\n\nGreat to have you revisit our website. Looking to explore our V 30 repeaters batch, hostel facilities, faculty, or admissions?\n\nHow may I direct you on the website today?`,
       actions: [
-        { label: "🚀 Super 30 Program", targetId: "super30" },
-        { label: "🏠 Campus & Hostel", targetId: "hostel" },
-        { label: "👨‍🏫 Our Faculty", targetId: "faculty" },
-        { label: "📞 Call Academy", phoneUrl: `tel:${ACADEMY_INFO.contacts.phones[0]}` }
+        { label: "V 30 Program", icon: "Rocket", targetId: "v30" },
+        { label: "Campus & Hostel", icon: "Home", targetId: "hostel" },
+        { label: "Our Faculty", icon: "GraduationCap", targetId: "faculty" },
+        { label: "Call Academy", icon: "Phone", phoneUrl: `tel:${ACADEMY_INFO.contacts.phones[0]}` }
       ]
     };
   }
@@ -68,11 +68,11 @@ export const processAcademyQuery = (rawQuery) => {
 
   if (!query) {
     return {
-      text: "Please enter a question regarding Vasakal Academy's courses, Super 30 batch, hostel facilities, faculty, or admissions.",
+      text: "Please enter a question regarding Vasakal Academy's courses, V 30 batch, hostel facilities, faculty, or admissions.",
       actions: [
-        { label: "🚀 Super 30", targetId: "super30" },
-        { label: "🏠 Hostel Life", targetId: "hostel" },
-        { label: "📚 Programs", targetId: "programs" }
+        { label: "V 30", icon: "Rocket", targetId: "v30" },
+        { label: "Hostel Life", icon: "Home", targetId: "hostel" },
+        { label: "Programs", icon: "BookOpen", targetId: "programs" }
       ]
     };
   }
@@ -80,17 +80,17 @@ export const processAcademyQuery = (rawQuery) => {
   // 1. STRICT DOMAIN GUARD CHECK
   const isOutOfScope = OUT_OF_SCOPE_PATTERNS.some(regex => regex.test(query));
   // Exceptions if they mention academy/exam context together
-  const hasAcademyContext = /\b(vasakal|super 30|super30|neet|jee|hostel|bodinayakanur|narayana|foundation|admission|enroll|faculty|syllabus)\b/i.test(query);
+  const hasAcademyContext = /\b(vasakal|v 30|v30|super 30|super30|neet|jee|hostel|bodinayakanur|narayana|foundation|admission|enroll|faculty|syllabus)\b/i.test(query);
 
   if (isOutOfScope && !hasAcademyContext) {
     return {
       text: `🛡️ **Vasakal Academy Domain Notice**:
-I am the **Vasakal Academy AI Assistant**, dedicated **strictly and exclusively** to information about **Vasakal Academy** (our courses, Super 30 program, hostel amenities, faculty experts, admissions, and Bodinayakanur campus).
+I am the **Vasakal Academy AI Assistant**, dedicated **strictly and exclusively** to information about **Vasakal Academy** (our courses, V 30 program, hostel amenities, faculty experts, admissions, and Bodinayakanur campus).
 
 I am not permitted to answer general trivia, programming, or external topics.
 
 **Here is what I can direct you to on this website:**
-- 🚀 **Super 30 Batch** for NEET & JEE Repeaters
+- 🚀 **V 30 Batch** for NEET & JEE Repeaters
 - 📚 **Foundation Academic Program** (Class 4th to 10th)
 - 🏠 **Separate Hostels** for Boys and Girls with food & 24/7 security
 - 👨‍🏫 **Senior Faculty Mentors** (Math, Physics, Chemistry, Biology)
@@ -99,17 +99,19 @@ I am not permitted to answer general trivia, programming, or external topics.
 
 What would you like to explore regarding Vasakal Academy?`,
       actions: [
-        { label: "🚀 Super 30 Details", targetId: "super30" },
-        { label: "🏠 Hostel Facilities", targetId: "hostel" },
-        { label: "📚 View Programs", targetId: "programs" },
-        { label: "📝 Enroll Online", externalUrl: ENROLLMENT_FORM_URL }
+        { label: "V 30 Details", icon: "Rocket", targetId: "v30" },
+        { label: "Hostel Facilities", icon: "Home", targetId: "hostel" },
+        { label: "View Programs", icon: "BookOpen", targetId: "programs" },
+        { label: "Enroll Online", icon: "FileText", externalUrl: ENROLLMENT_FORM_URL }
       ],
       isGuardrailTriggered: true
     };
   }
 
-  // 2. SUPER 30 / NEET / JEE REPEATERS
+  // 2. V 30 / NEET / JEE REPEATERS
   if (
+    query.includes("v 30") ||
+    query.includes("v30") ||
     query.includes("super 30") ||
     query.includes("super30") ||
     query.includes("repeater") ||
@@ -119,20 +121,20 @@ What would you like to explore regarding Vasakal Academy?`,
     query.includes("30 seats")
   ) {
     return {
-      text: `🚀 **Vasakal Super 30 Program (NEET & JEE Repeaters)**
+      text: `🚀 **Vasakal V 30 Program (NEET & JEE Repeaters)**
 
-The **Super 30** program is our flagship, highly rigorous intensive coaching module specifically tailored for NEET and JEE repeaters/droppers:
+The **V 30** program is our flagship, highly rigorous intensive coaching module specifically tailored for NEET and JEE repeaters/droppers:
 
 - 🎯 **Strictly 30 Seats Only:** We cap the batch at 30 aspirants to guarantee 100% individual mentorship and direct faculty supervision.
 - 📈 **Daily Intensive Testing:** Daily OMR-based mock tests, granular error analysis, and targeted concept reinforcement.
 - 🤝 **Dedicated Mentorship:** One-on-one doubt resolution and daily performance tracking by senior academic directors.
 - 🏆 **Maximized Success Rate:** Designed to transform repeater aspirants into top-rankers in government medical colleges and premier IITs/NITs.
 
-Would you like me to take you directly to the Super 30 section or open the enrollment form?`,
+Would you like me to take you directly to the V 30 section or open the enrollment form?`,
       actions: [
-        { label: "👉 Go to Super 30 Section", targetId: "super30" },
-        { label: "📝 Fill Google Enrollment Form", externalUrl: ENROLLMENT_FORM_URL },
-        { label: "📞 Call Academy: 9842863113", phoneUrl: "tel:9842863113" }
+        { label: "Go to V 30 Section", icon: "Rocket", targetId: "v30" },
+        { label: "Fill Google Enrollment Form", icon: "FileText", externalUrl: ENROLLMENT_FORM_URL },
+        { label: "Call Academy: 9842863113", icon: "Phone", phoneUrl: "tel:9842863113" }
       ]
     };
   }
@@ -232,11 +234,11 @@ Shall I take you to the Foundation section or Programs section?`,
 - 👥 **Programs Available:**
   1. *Foundation Track (Class 4th-10th)*
   2. *Integrated Academic Program (Class 11th-12th)*
-  3. *Super 30 Dedicated Repeaters Batch (30 Seats)*
+  3. *V 30 Dedicated Repeaters Batch (30 Seats)*
 
 Where would you like to navigate?`,
       actions: [
-        { label: "👉 Explore Super 30 (Repeaters)", targetId: "super30" },
+        { label: "👉 Explore V 30 (Repeaters)", targetId: "v30" },
         { label: "👉 Explore Programs (11th-12th)", targetId: "programs" },
         { label: "👉 View Aspirations", targetId: "aspirations" },
         { label: "📝 Direct Enrollment", externalUrl: ENROLLMENT_FORM_URL }
@@ -295,10 +297,10 @@ Let me navigate you directly to meet the faculty!`,
 Joining Vasakal Academy is simple and transparent:
 
 1. 📄 **Fill the Online Enrollment Form:** Submit your details directly through our official Google Form.
-2. 📞 **Diagnostic Counseling:** Our academic mentors will contact you to evaluate student goals and recommend the optimal batch (Foundation, Class 11-12, or Super 30).
+2. 📞 **Diagnostic Counseling:** Our academic mentors will contact you to evaluate student goals and recommend the optimal batch (Foundation, Class 11-12, or V 30).
 3. 🏫 **Campus Visit & Confirmation:** Visit our Bodinayakanur center to complete admission formalities and tour hostel facilities.
 
-*Note on Fees:* Course and hostel fee structures depend on the selected program (Foundation, 11th/12th, or Super 30) and scholarship evaluations. Please call our admission desk for current fee charts.`,
+*Note on Fees:* Course and hostel fee structures depend on the selected program (Foundation, 11th/12th, or V 30) and scholarship evaluations. Please call our admission desk for current fee charts.`,
       actions: [
         { label: "📝 Open Official Enrollment Form", externalUrl: ENROLLMENT_FORM_URL },
         { label: "📞 Call Admissions (9842863113)", phoneUrl: "tel:9842863113" },
@@ -352,7 +354,7 @@ I can scroll you down to our campus interactive map and contact inquiry form!`,
     query.includes("technique")
   ) {
     return {
-      text: `💡 **Vasakal Academy 4 Pillars of Learning**
+      text: `💡 **Vasakal Academy 4 Spell of Learning**
 
 1. 🌟 **Creative Thinking:** Out-of-the-box analytical problem solving beyond simple memorization.
 2. 🔍 **Enquiry Based Learning:** Developing hypotheses and logical deductions.
@@ -418,7 +420,7 @@ Explore our mission and student achievements below:`,
       actions: [
         { label: "👉 About / Mission Section", targetId: "about" },
         { label: "👉 Explore Programs", targetId: "programs" },
-        { label: "🚀 Super 30 Program", targetId: "super30" }
+        { label: "🚀 V 30 Program", targetId: "v30" }
       ]
     };
   }
@@ -427,11 +429,11 @@ Explore our mission and student achievements below:`,
   return {
     text: `I'm happy to help you with that! Here is a summary of what Vasakal Academy provides for your question:
 
-Vasakal Academy in Bodinayakanur is dedicated to **competitive academic excellence** (NEET, IIT-JEE, and Foundation Class 4-10). With our **Super 30** batch, experienced faculty panel, separate hostels with 24/7 security, and personalized doubt clearance, we ensure comprehensive student success.
+Vasakal Academy in Bodinayakanur is dedicated to **competitive academic excellence** (NEET, IIT-JEE, and Foundation Class 4-10). With our **V 30** batch, experienced faculty panel, separate hostels with 24/7 security, and personalized doubt clearance, we ensure comprehensive student success.
 
 Where on our website can I direct you?`,
     actions: [
-      { label: "🚀 Super 30 (NEET & JEE)", targetId: "super30" },
+      { label: "🚀 V 30 (NEET & JEE)", targetId: "v30" },
       { label: "📚 Academic Programs", targetId: "programs" },
       { label: "🏠 Hostel Facilities", targetId: "hostel" },
       { label: "👨‍🏫 Faculty Experts", targetId: "faculty" },
@@ -442,7 +444,7 @@ Where on our website can I direct you?`,
 };
 
 export const QUICK_SUGGESTIONS = [
-  "What is the Super 30 program?",
+  "What is the V 30 program?",
   "Tell me about hostel & food facilities",
   "Foundation course for Class 6th to 10th",
   "How to enroll and apply?",

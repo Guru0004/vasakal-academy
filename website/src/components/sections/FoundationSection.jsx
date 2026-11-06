@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import { CheckCircle2, XCircle } from "lucide-react";
+import { CheckCircle2, XCircle, AlertTriangle, Sparkles } from "lucide-react";
 import { FOUNDATION_DATA } from "../../data/academyData";
 
 export const FoundationSection = () => {
@@ -59,8 +59,9 @@ export const FoundationSection = () => {
                 </li>
               </ul>
             </div>
-            <div className="mt-6 pt-4 border-t border-rose-100 dark:border-navy-800 text-xs font-semibold text-rose-600 dark:text-rose-400">
-              ⚠️ High stress and low preparation runway
+            <div className="mt-6 pt-4 border-t border-rose-100 dark:border-navy-800 text-xs font-semibold text-rose-600 dark:text-rose-400 flex items-center gap-1.5">
+              <AlertTriangle className="w-4 h-4 shrink-0" />
+              <span>High stress and low preparation runway</span>
             </div>
           </div>
 
@@ -99,8 +100,9 @@ export const FoundationSection = () => {
                 </li>
               </ul>
             </div>
-            <div className="mt-6 pt-4 border-t border-emerald-100 dark:border-navy-800 text-xs font-bold text-emerald-700 dark:text-emerald-400">
-              🌟 The gold standard for national medical and engineering admissions
+            <div className="mt-6 pt-4 border-t border-emerald-100 dark:border-navy-800 text-xs font-bold text-emerald-700 dark:text-emerald-400 flex items-center gap-1.5">
+              <Sparkles className="w-4 h-4 shrink-0 text-amber-500" />
+              <span>The gold standard for national medical and engineering admissions</span>
             </div>
           </div>
         </div>

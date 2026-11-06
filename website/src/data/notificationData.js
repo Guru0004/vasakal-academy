@@ -5,7 +5,7 @@ export const INITIAL_NOTIFICATIONS = [
   {
     id: "notif-adm-2025",
     category: "admissions",
-    badge: "🎓 Admissions Open",
+    badge: "Admissions Open",
     badgeColor: "bg-blue-600 text-white",
     title: "NEET & IIT-JEE 2025–26 Enrolment",
     quote: '"The secret of getting ahead is getting started." — Mark Twain',
@@ -22,13 +22,13 @@ export const INITIAL_NOTIFICATIONS = [
   {
     id: "notif-v30-elite",
     category: "scholarship",
-    badge: "⭐ Vasakal 30",
+    badge: "V 30",
     badgeColor: "bg-amber-500 text-white",
-    title: "Vasakal 30 Full Scholarship Batch",
+    title: "Vasakal V 30 Full Scholarship Batch",
     quote: '"Education is the most powerful weapon you can use to change the world." — Nelson Mandela',
     body: "Top 30 meritorious students receive 100% tuition waiver, elite mentorship, and round-the-clock faculty access.",
-    cta: "Explore Vasakal 30",
-    ctaHref: "#super30",
+    cta: "Explore V 30",
+    ctaHref: "#v30",
     ctaExternal: false,
     accent: "from-amber-600 via-orange-500 to-yellow-500",
     glow: "shadow-amber-500/30",
@@ -39,7 +39,7 @@ export const INITIAL_NOTIFICATIONS = [
   {
     id: "notif-foundation-course",
     category: "foundation",
-    badge: "🔬 Foundation Batch",
+    badge: "Foundation Batch",
     badgeColor: "bg-emerald-600 text-white",
     title: "Class 6–10 Olympiad & Foundation",
     quote: '"Believe you can and you\'re halfway there." — Theodore Roosevelt',
@@ -56,7 +56,7 @@ export const INITIAL_NOTIFICATIONS = [
   {
     id: "notif-seminar-bodinayakanur",
     category: "events",
-    badge: "📢 Free Seminar",
+    badge: "Free Seminar",
     badgeColor: "bg-purple-600 text-white",
     title: "Seminar for Life Goal - Bodinayakanur",
     quote: '"Shaping the Real Professionals of Tomorrow."',
@@ -73,7 +73,7 @@ export const INITIAL_NOTIFICATIONS = [
   {
     id: "notif-hostel-admissions",
     category: "campus",
-    badge: "🏢 Campus & Hostel",
+    badge: "Campus & Hostel",
     badgeColor: "bg-indigo-600 text-white",
     title: "Hostel Facility Available for Boys & Girls",
     quote: '"A disciplined, nurturing space dedicated to academic focus."',

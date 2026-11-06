@@ -63,7 +63,7 @@ Thank you.`
                   {ACADEMY_INFO.contacts.address}
                 </p>
                 <span className="text-xs text-blue-600 dark:text-blue-300 font-bold">
-                  Offline batches & weekday student support center
+                  Offline / Online batches & weekday student support center
                 </span>
               </div>
             </div>
@@ -151,8 +151,9 @@ Thank you.`
                 referrerPolicy="no-referrer-when-downgrade"
                 className="w-full h-full grayscale-[15%] contrast-110"
               />
-              <div className="absolute bottom-3 left-3 bg-white/95 dark:bg-[#071A3D]/95 backdrop-blur-md px-3 py-1.5 rounded-lg border border-gray-200 dark:border-blue-500/40 text-xs font-bold text-[#071A3D] dark:text-white shadow-sm">
-                📍 Thasildar Office Road, Bodinayakanur
+              <div className="absolute bottom-3 left-3 bg-white/95 dark:bg-[#071A3D]/95 backdrop-blur-md px-3 py-1.5 rounded-lg border border-gray-200 dark:border-blue-500/40 text-xs font-bold text-[#071A3D] dark:text-white shadow-sm flex items-center gap-1.5">
+                <MapPin className="w-3.5 h-3.5 text-rose-600 dark:text-rose-400 shrink-0" />
+                <span>Thasildar Office Road, Bodinayakanur</span>
               </div>
             </div>
 

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { AlertCircle, CheckCircle2, ShieldCheck, Layers, BookOpenCheck, Award, PhoneCall, TrendingDown, TrendingUp } from "lucide-react";
+import { AlertCircle, CheckCircle2, ShieldCheck, Layers, BookOpenCheck, Award, PhoneCall, TrendingDown, TrendingUp, ArrowRight } from "lucide-react";
 import { CHALLENGES_VS_SOLUTION } from "../../data/academyData";
 
 const solutionIcons = {
@@ -39,7 +39,7 @@ export const ChallengesVsSolutionSection = () => {
                   : "text-[#475569] dark:text-slate-100 hover:text-[#071A3D] dark:hover:text-white"
               }`}
             >
-              Vasakal Solution (6 Pillars)
+              Vasakal Solution (6 Spells)
             </button>
             <button
               onClick={() => setActiveTab("challenges")}
@@ -76,7 +76,7 @@ export const ChallengesVsSolutionSection = () => {
                 <div className="text-[11px] text-rose-700/80 dark:text-rose-300">Sudden shock in 11th & 12th</div>
               </div>
 
-              <div className="text-2xl text-gray-400 dark:text-blue-300 font-light hidden sm:block">➔</div>
+              <ArrowRight className="w-6 h-6 text-gray-400 dark:text-blue-300 hidden sm:block shrink-0" />
 
               <div className="p-4 rounded-xl bg-emerald-50 dark:bg-emerald-950/60 border border-emerald-200 dark:border-emerald-800 text-center w-full sm:w-44">
                 <TrendingUp className="w-6 h-6 text-emerald-600 dark:text-emerald-400 mx-auto mb-1" />

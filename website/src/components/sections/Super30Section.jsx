@@ -23,9 +23,11 @@ const features = [
   }
 ];
 
-export const Super30Section = () => {
+export const V30Section = () => {
   return (
-    <section id="super30" className="py-20 lg:py-32 relative overflow-hidden bg-white dark:bg-[#071A3D]">
+    <section id="v30" className="py-20 lg:py-32 relative overflow-hidden bg-white dark:bg-[#071A3D]">
+      {/* Anchor alias for backwards compatibility */}
+      <div id="super30" className="absolute -top-24 opacity-0 pointer-events-none" aria-hidden="true" />
       {/* Background decorations */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-600/5 dark:bg-blue-500/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-indigo-600/5 dark:bg-indigo-500/10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2 pointer-events-none" />
@@ -46,11 +48,11 @@ export const Super30Section = () => {
             </div>
             
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-[#071A3D] dark:text-white leading-tight mb-6">
-              Vasakal <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-400 dark:to-indigo-400">Super 30</span> Program
+              Vasakal <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-400 dark:to-indigo-400">V 30</span> Program
             </h2>
             
             <p className="text-gray-600 dark:text-slate-300 text-lg mb-8 leading-relaxed">
-              Designed exclusively for dedicated NEET and JEE repeaters. We focus on just 30 students to provide unmatched personalized attention, rigorously tracking progress to make your dream of entering premier medical and engineering institutions a reality.
+              Designed exclusively for dedicated NEET and JEE repeaters. Our V 30 batch focuses on just 30 students to provide unmatched personalized attention, rigorously tracking progress to make your dream of entering premier medical and engineering institutions a reality.
             </p>
             
             <div className="space-y-6">
@@ -95,12 +97,12 @@ export const Super30Section = () => {
                     animate={{ scale: [1, 1.05, 1] }}
                     transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
                   >
-                    <span className="text-8xl md:text-9xl font-heading font-black text-transparent bg-clip-text bg-gradient-to-b from-white to-white/50 drop-shadow-2xl">
-                      30
+                    <span className="text-7xl sm:text-8xl md:text-9xl font-heading font-black text-transparent bg-clip-text bg-gradient-to-b from-white to-white/50 drop-shadow-2xl">
+                      V 30
                     </span>
                   </motion.div>
                   <p className="text-xl md:text-2xl font-bold text-blue-200 mt-4 tracking-wider uppercase">
-                    Seats Only
+                    30 Seats Only
                   </p>
                   <div className="mt-8 flex justify-center gap-3">
                     <span className="px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-sm font-semibold flex items-center gap-2">
@@ -134,3 +136,5 @@ export const Super30Section = () => {
     </section>
   );
 };
+
+export const Super30Section = V30Section;
